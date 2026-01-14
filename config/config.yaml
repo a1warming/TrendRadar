@@ -32,6 +32,8 @@ platforms:
     name: "华尔街见闻"
   - id: "thepaper"
     name: "澎湃新闻"
+  - id: "cankaoxiaoxi"
+    name: "参考消息"
   - id: "bilibili-hot-search"
     name: "bilibili 热搜"
   - id: "cls-hot"
@@ -46,6 +48,12 @@ platforms:
     name: "抖音"
   - id: "zhihu"
     name: "知乎"
+  - id: "zaobao"
+    name: "联合早报"
+  - id: "mktnews"
+    name: "MKT新闻"
+  - id: "kaopu"
+    name: "靠谱新闻"
 
 
 # ===============================================================
@@ -122,7 +130,7 @@ rss:
 #    • 适用场景：避免重复信息干扰
 # ===============================================================
 report:
-  mode: "current"                     # 可选: daily | current | incremental
+  mode: "incremental"                     # 可选: daily | current | incremental
   display_mode: "keyword"             # 可选: keyword | platform
                                       # keyword: 按关键词分组显示（默认）
                                       # platform: 按平台/来源分组显示
@@ -163,7 +171,7 @@ notification:
   # 注意：GitHub Actions 执行时间不稳定，时间范围建议至少留足 2 小时
   #       如果想要精准的定时推送，建议使用 Docker 部署在个人服务器上
   push_window:
-    enabled: false                    # 是否启用推送时间窗口控制
+    enabled: true                    # 是否启用推送时间窗口控制
     start: "20:00"                    # 开始时间（北京时间）
     end: "22:00"                      # 结束时间（北京时间）
     once_per_day: true                # true=窗口内只推送一次，false=窗口内每次执行都推送
